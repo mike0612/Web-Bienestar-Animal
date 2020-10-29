@@ -1,0 +1,32 @@
+<form class="form-register centered-layout" [formGroup]="formRegistro" (ngSubmit)="registrarNuevoUsuario()">
+  <h2>Crea una cuenta</h2>
+  
+  <input class="form-register__input" formControlName="nombre" placeholder="Nombre" type="text" required>
+  <p class="form--mine__error" *ngIf="formRegistro.controls['nombre'].errors?.required">El nombre es necesario.</p>
+  
+  <input class="form-register__input" formControlName="apellidoPaterno" placeholder="Apellido paterno" type="text" required>
+  <p class="form--mine__error" *ngIf="formRegistro.controls['apellidoPaterno'].errors?.required">El apellido paterno es necesario.</p>
+  
+  <input class="form-register__input" formControlName="apellidoMaterno" placeholder="Apellido materno" type="text" required>
+  <p class="form--mine__error" *ngIf="formRegistro.controls['apellidoMaterno'].errors?.required">El apellido materno es necesario.</p>
+  
+  <input class="form-register__input" formControlName="correo" placeholder="Correo electrónico" type="email" required>
+  <p class="form--mine__error" *ngIf="formRegistro.controls['correo'].errors?.required">El correo es necesario.</p>
+  <p class="form--mine__error" *ngIf="formRegistro.controls['correo'].errors?.email">El correo es inválido.</p>
+  
+  <input class="form-register__input" formControlName="contrasena" placeholder="Contraseña" type="password" required>
+  <p class="form--mine__error" *ngIf="formRegistro.controls['contrasena'].errors?.required">La contraseña es necesaria.</p>
+  <p class="form--mine__error" *ngIf="formRegistro.controls['contrasena'].errors?.invalid">La contraseña debe tener 8 caracteres como mínimo.</p>
+  
+  <input class="form-register__input" formControlName="confirmar" placeholder="Confirme Contraseña" type="password" required>
+  <p class="form--mine__error" *ngIf="formRegistro.controls['confirmar'].errors?.required">La contraseña es necesaria.</p>
+  <p class="form--mine__error" *ngIf="formRegistro.controls['confirmar'].errors?.invalid">La contraseña debe tener 8 caracteres como mínimo.</p>
+  <!-- <p class="form--mine__error" *ngIf="formRegistro.controls['confirmar'].errors?.notSame">Las contraseñas no coinciden.</p> -->
+  
+  <label for="txtDate">Fecha de Nacimiento</label>
+  <input class="form-register__input" formControlName="fecha" type="date" name="" id="txtDate" required>
+  <p class="form--mine__error" *ngIf="formRegistro.controls['fecha'].errors?.required">La fecha de nacimiento es necesaria.</p>
+
+  <button class="form-register__submit" type="submit">Registrarse</button>
+  <a class="form-register__login pointer" [routerLink]="['/welcome','contact']">Ya tengo una cuenta</a>
+</form>

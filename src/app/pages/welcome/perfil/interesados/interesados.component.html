@@ -1,0 +1,23 @@
+<section class="centered-layout adoptados">
+  <table class="table-interested">
+    <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Edad</th>
+        <th>Raza</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="!usuario">
+        No tienes ningún animal que te interese.
+      </tr>
+      <ng-container *ngIf="usuario">
+        <tr *ngFor="let mascota of usuario.mascotasInteresadas">
+          <td>{{mascota.tipo}}</td>
+          <td>{{mascota.edad}}</td>
+          <td>{{mascota.raza}}</td>
+        </tr>
+      </ng-container>    
+    </tbody>
+  </table>
+</section>

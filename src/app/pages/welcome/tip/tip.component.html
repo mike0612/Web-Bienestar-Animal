@@ -1,0 +1,20 @@
+<section class="centered-layout">
+  <section class="banner-tips" #jumbotronTip>
+    <header class="banner-tips__content">
+      <h3>Información que cura</h3>
+    </header>
+  </section>
+  <section class="container-post">
+      <div class="singlePost-grid singlePost-card">
+          <figure>
+            <img [src]="tip.foto" alt="tip" class="singlePost-image">
+          </figure>
+          <div class="singlePost-new">
+            <h2>{{tip.titulo}}</h2>
+            <h4>{{tip.folio}}</h4>
+            <p>{{tip.contenido}}</p>
+            <a class="regresar-noticias" [routerLink]="['/welcome','tips']">Regresar</a>
+          </div>
+      </div>
+  </section>
+</section>

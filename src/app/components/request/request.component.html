@@ -1,0 +1,14 @@
+<section class="request-container">
+  <ul class="centered-layout request__nav">
+    <li routerLinkActive="request__active" class="request__item">
+      <a [routerLink]="['data']" class="request__link"><span class="request__number">1</span> Datos personales</a>
+    </li>
+    <li routerLinkActive="request__active" class="request__item">
+      <a [routerLink]="['answers']" class="request__link"><span class="request__number">2</span> Cuestionario</a>
+    </li>
+    <li routerLinkActive="request__active" class="request__item">
+      <a [routerLink]="['confirm']" class="request__link"><span class="request__number">3</span> Confirmar</a>
+    </li>
+  </ul>
+  <router-outlet (activate)="onActivate($event)" (deactivate)="onDeactivate($event)"></router-outlet>
+</section>

@@ -1,0 +1,57 @@
+<section class="centered-layout container-data">
+  <form [formGroup]="formulario" class="form-data" (ngSubmit)="enviarRespuestas()">
+    <h3>Contesta el siguiente cuestionario</h3>
+    <label for="pregunta1">¿Por qué desea adoptar una mascota?</label>
+    <input type="text" class="form-data__input" formControlName="pregunta1" id="pregunta1">
+    <p class="form--mine__error" *ngIf="formulario.controls['pregunta1'].errors?.required">La respuesta es necesaria.</p>
+
+    <label for="pregunta2">¿Actualmente cuenta con otros animalitos? Si/No y ¿Cuáles?</label>
+    <input type="text" class="form-data__input" formControlName="pregunta2" id="pregunta2">
+    <p class="form--mine__error" *ngIf="formulario.controls['pregunta2'].errors?.required">La respuesta es necesaria</p>  
+
+    <label for="pregunta3">¿Si los tiene están esterilizados? Si/No y ¿Por qué?</label>
+    <input type="text" class="form-data__input" formControlName="pregunta3" id="pregunta3">
+
+    <label for="pregunta4">¿Anteriormente ha tenido otros animalitos? Sí/No y ¿Cuáles?</label>
+    <input type="text" class="form-data__input" formControlName="pregunta4" id="pregunta4">
+    <p class="form--mine__error" *ngIf="formulario.controls['pregunta4'].errors?.required">La respuesta es necesaria</p>
+
+    <label for="pregunta5">¿Qué fue lo que pasó con él/ellos?</label>
+    <input type="text" class="form-data__input" formControlName="pregunta5" id="pregunta5">
+
+    <label for="pregunta6">¿Está de acuerdo en que se haga una visita periódica para ver cómo se encuentra el animalito? Si/No y ¿Por qué?</label>
+    <input type="text" class="form-data__input" formControlName="pregunta6" id="pregunta6">
+    <p class="form--mine__error" *ngIf="formulario.controls['pregunta6'].errors?.required">La respuesta es necesaria.</p>
+
+    <label for="pregunta7">¿Cuántas personas viven en su casa?</label>
+    <input type="text" class="form-data__input" formControlName="pregunta7" id="pregunta7">
+    <p class="form--mine__error" *ngIf="formulario.controls['pregunta7'].errors?.required">La respuesta es necesaria.</p>
+    
+    <label for="pregunta8">¿Están todos de acuerdo en adoptar? Sí/No</label>
+    <input type="text" class="form-data__input" formControlName="pregunta8" id="pregunta8">
+    <p class="form--mine__error" *ngIf="formulario.controls['pregunta8'].errors?.required">La respuesta es necesaria.</p>
+    
+    <label for="pregunta9">¿Hay niños en casa? Sí/No y edades</label>
+    <input type="text" class="form-data__input" formControlName="pregunta9" id="pregunta9">
+    <p class="form--mine__error" *ngIf="formulario.controls['pregunta9'].errors?.required">La respuesta es necesaria.</p>
+    
+    <label for="pregunta10">¿Alguien que viva con ustedes es alérgico a los animales o sufre de asma?</label>
+    <input type="text" class="form-data__input" formControlName="pregunta10" id="pregunta10">
+    <p class="form--mine__error" *ngIf="formulario.controls['pregunta10'].errors?.required">La respuesta es necesaria.</p>
+    
+    <label for="pregunta11">¿En caso de alquiler sus arrendadores permiten animalitos en la casa o departamento?</label>
+    <select class="form-data__input" formControlName="pregunta11" id="pregunta11">
+      <option value="Si">Sí</option>
+      <option value="No">No</option>
+      <option value="No se">No sé</option>
+      <option value="Vivo en casa propia">Vivo en casa propia</option>
+    </select>
+    <p class="form--mine__error" *ngIf="formulario.controls['pregunta11'].errors?.required">La respuesta es necesaria.</p>
+    
+    <label for="pregunta12">Si por algún motivo tuvieras que cambiar de domicilio, ¿Qué pasaría con el animalito?</label>
+    <input class="form-data__input" type="text" formControlName="pregunta12" id="pregunta12">
+    <p class="form--mine__error" *ngIf="formulario.controls['pregunta12'].errors?.required">La respuesta es necesaria.</p>
+
+    <button type="submit" class="form-data__submit">Enviar respuestas</button>
+  </form>
+</section>

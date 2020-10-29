@@ -1,0 +1,13 @@
+<section *ngIf="!usuario" class="centered-layout citas-bloqueador">
+  <h3 class="blocked-message">Para agendar una cita <a class="login-link" [routerLink]="['/welcome','contact']">inicie sesión</a></h3>
+</section>
+<section class="centered-layout">
+  <article class="banner-date">
+    <header class="container banner-date__content">
+      <h3>Agenda una cita</h3>
+    </header>
+  </article>
+  <article class="container container-form-date centered-layout">
+    <app-form-date></app-form-date>
+  </article>
+</section>

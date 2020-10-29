@@ -1,0 +1,25 @@
+<app-modal-adopt *ngIf="mostrarModal" [mascota]="mascotaElegida" (closeModal)="changeState($event)"></app-modal-adopt>
+<section class="centered-layout">
+  <section class="banner-adopt" #jumbotronAdopt>
+    <div class="container banner-adopt__content">
+      <h3>Lleva a casa a un nuevo minino</h3>
+    </div>
+  </section>
+  <section class="container-dogs">
+    <section *ngIf="!gatos" class="carga">
+      <div id="cssload-loader">
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+      </div>
+    </section>
+    <section class="results-list" *ngIf="gatos">
+      <app-card-adopt *ngFor="let gato of gatos" [mascota]="gato" (adopt)="changeState($event)"></app-card-adopt>
+    </section>
+  </section>
+</section>

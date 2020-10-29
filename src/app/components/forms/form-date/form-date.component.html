@@ -1,0 +1,29 @@
+<form class="form-date centered-layout" [formGroup]="formulario" (ngSubmit)="agendarCita()">
+  <h2>Agenda una cita para esterilización</h2>
+  <label for="txtName">Nombre del dueño</label>
+  <input class="form-date__input" id="txtName" formControlName="nombre" placeholder="Dueño" type="text" required>
+  <p *ngIf="formulario.controls['nombre'].errors?.required" class="form--mine__error">Su nombre es necesario.</p>
+  <br>
+  <br>
+  <label for="txtPetName">Nombre de la mascota</label>
+  <input class="form-date__input" id="txtPetName" formControlName="mascota" placeholder="Mascota" type="text" required>
+  <p *ngIf="formulario.controls['mascota'].errors?.required" class="form--mine__error">El nombre de la mascota es necesario.</p>
+  <br>
+  <br>
+  <label for="selectAge">Selecciona la edad de tu mascota</label>
+  <select class="form-date__input" id="selectAge" formControlName="edadMascota" required>
+    <option value="">Elige un rango de edad</option>
+    <option value="Menos_de_un_año">Menos de un año</option>
+    <option value="Entre_1_y_dos_años">Entre 1 y 2 años</option>
+    <option value="Mas_de_dos_años">Más de 2 años</option>
+  </select>
+  <p *ngIf="formulario.controls['edadMascota'].errors?.required" class="form--mine__error">La edad de la mascota es necesaria..</p>
+  <br>
+  <br>
+  <label for="txtDate">Elige una fecha</label>
+  <input class="form-date__input" type="date" id="txtDate" formControlName="fecha" required>
+  <p *ngIf="formulario.controls['fecha'].errors?.required" class="form--mine__error">La fecha de la cita es necesaria..</p>
+  <br>
+  <br>
+  <button class="form-date__submit" type="submit">Agendar cita</button>
+</form>

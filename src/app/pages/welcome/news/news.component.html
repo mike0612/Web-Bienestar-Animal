@@ -1,0 +1,25 @@
+<section class="centered-layout">
+  <section class="banner-news" #jumbotronNews>
+    <header class="banner-news__content">
+      <h3>{{jumbotron.slogan}}</h3>
+    </header>
+  </section>
+  <section *ngIf="!noticias" class="carga">
+    <div id="cssload-loader">
+      <div class="cssload-dot"></div>
+      <div class="cssload-dot"></div>
+      <div class="cssload-dot"></div>
+      <div class="cssload-dot"></div>
+      <div class="cssload-dot"></div>
+      <div class="cssload-dot"></div>
+      <div class="cssload-dot"></div>
+      <div class="cssload-dot"></div>p
+    </div>
+  </section>
+  <section *ngIf="noticias" class="news">
+    <div class="container-news">
+      <app-new-card *ngFor="let noticia of noticias" [noticia]="noticia"></app-new-card>
+    </div>
+  </section>
+</section>
+

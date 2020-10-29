@@ -1,0 +1,12 @@
+<article class="card-new-grid card--new">
+  <figure class="card--new__figure">
+    <img [src]="noticia.foto" alt="foto_noticia">
+  </figure>
+  <header class="card--new__header">
+    <a [routerLink]="['/welcome','single-post', noticia.id]" class="new-title"><h3>{{noticia.titulo}}</h3></a>
+    <small>{{noticia.subtitulo}}</small>
+  </header>
+  <section class="card--new__content">
+    <p>{{noticia.contenido}}</p>
+  </section>
+</article>

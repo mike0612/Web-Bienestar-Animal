@@ -1,0 +1,72 @@
+<app-modal-mine *ngIf="show" (emitState)="changeState($event)" [perdido]="elegido"></app-modal-mine>
+<div class="centered-layout">
+  <section class="banner-lost" #jumbotronLost>
+    <div class="container banner-lost__content">
+      <h3>{{jumbotron.slogan}}</h3>
+    </div>
+  </section>
+  <section class="centered-layout report-container">
+    <form class="form-report" [formGroup]="formulario" (ngSubmit)="enviarReporte()">
+      <label for="txtNombreReportante">Nombre de quien reporta</label>
+      <input formControlName="nombre" class="form-report__input" type="text" id="txtNombreReportante">
+
+      <label for="txtTelefono">Telefono</label>
+      <input formControlName="telefono" class="form-report__input" type="text" id="txtTelefono">
+
+      <label for="txtDireccion">Dirección</label>
+      <input formControlName="direccion" class="form-report__input" type="text" id="txtDireccion">
+
+      <label for="txtCalles">Entre calles</label>
+      <input formControlName="calles" class="form-report__input" type="text" id="txtCalles">
+
+      <label for="txtReferencia">Referencia del lugar</label>
+      <input formControlName="referencia" class="form-report__input" type="text" id="txtReferencia">
+
+      <label for="txtAsunto">Asunto</label>
+      <select formControlName="asunto" class="form-report__input" id="txtAsunto">
+        <option value="adopcion">Adopción</option>
+        <option value="jauria">Jauria</option>
+        <option value="abandono">Abandono</option>
+        <option value="agresion">Agresión</option>
+        <option value="donacion">Donación</option>
+        <option value="atropello">Atropello</option>
+        <option value="otro">Otro</option>
+      </select>
+
+      <label for="txtDescripcion">Descripción</label>
+      <textarea formControlName="descripcion" class="form-report__input" id="txtDescripcion" cols="30" rows="10"></textarea>
+
+      <label for="txtCaracteristicas">Características de la o las mascotas</label>
+      <textarea formControlName="caracteristicas" class="form-report__input" id="txtCaracteristicas" cols="30" rows="10"></textarea>
+
+      <label for="txtFoto">Foto del reporte</label>
+      <input formControlName="foto" (change)="elegirImagen($event)" type="file" id="txtFoto">
+      
+      <figure class="form-report__img" *ngIf="url">
+        <img [src]="url" alt="foto_reporte">
+      </figure>
+
+      <section *ngIf="conocido">
+        <label for="txtNombreDueno">Nombre del dueño</label>
+        <input formControlName="nombreDueno" class="form-report__input" type="text" id="txtNombreDueno">
+
+        <label for="txtDireccionDueno">Dirección</label>
+        <input formControlName="direccionDueno" class="form-report__input" type="text" id="txtDireccionDueno">
+
+        <label for="txtCallesDueno">Entre calles</label>
+        <input formControlName="callesDueno" class="form-report__input" type="text" id="txtCallesDueno">
+
+        <label for="txtReferenciaDueno">Referencia del lugar</label>
+        <input formControlName="referenciaDueno" class="form-report__input" type="text" id="txtReferenciaDueno">
+
+        <label for="txtCaracteristicasDueno">Características de la o de las mascotas</label>
+        <input formControlName="caracteristicasDueno" class="form-report__input" type="text" id="txtCaracteristicasDueno">
+      </section>
+      
+      <section class="form-report__actions">
+        <button class="form-report__submit" type="submit">Enviar reporte</button>
+        <button class="form-report__button" (click)="cambiarConocido()">Conozco a quien reporto</button>
+      </section>
+    </form>
+  </section>
+</div>

@@ -1,0 +1,72 @@
+<header class="menu">
+    <div class="container" id="container-menu">
+        <figure class="logo">
+            <img src="../../../../assets/img/logoAppNuevoB.png" alt="Logo de Arca">
+        </figure>
+        <img (click)="toggled= !toggled" class="button-hamburguer" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iNTAiIGhlaWdodD0iNTAiCnZpZXdCb3g9IjAgMCAxOTIgMTkyIgpzdHlsZT0iIGZpbGw6IzAwMDAwMDsiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxwYXRoIGQ9Ik0wLDE5MnYtMTkyaDE5MnYxOTJ6IiBmaWxsPSJub25lIj48L3BhdGg+PGcgZmlsbD0iI2ZmZmZmZiI+PGcgaWQ9InN1cmZhY2UxIj48cGF0aCBkPSJNMCwyOC44djE5LjJoMTkydi0xOS4yek0wLDg2LjR2MTkuMmgxOTJ2LTE5LjJ6TTAsMTQ0djE5LjJoMTkydi0xOS4yeiI+PC9wYXRoPjwvZz48L2c+PC9nPjwvc3ZnPg==">
+        
+        <nav *ngIf="toggled" class="sidemenu">
+            <ul>
+                <li *ngIf="nombre" class="sidemenu__item" routerLinkActive="sidemenu__link--active">
+                    <a class="sidemenu__link" [routerLink]="['/welcome','perfil']">{{nombre}}</a>
+                </li>
+                <li class="sidemenu__item" routerLinkActive="sidemenu__link--active">
+                    <a [routerLink]="['/welcome','landing']" class="sidemenu__link">Home</a>
+                </li>
+                <li class="sidemenu__item" routerLinkActive="sidemenu__link--active">
+                    <a [routerLink]="['/welcome','adopt']" class="sidemenu__link">Adopta</a>
+                </li>
+                <li class="sidemenu__item" routerLinkActive="sidemenu__link--active">
+                    <a [routerLink]="['/welcome','lost']" class="sidemenu__link">Reportes</a>
+                </li>
+                <li class="sidemenu__item" routerLinkActive="sidemenu__link--active">
+                    <a [routerLink]="['/welcome','news']" class="sidemenu__link">Noticias</a>
+                </li>
+                <!-- <li class="sidemenu__item" routerLinkActive="sidemenu__link--active">
+                    <a [routerLink]="['/welcome','dates']" class="sidemenu__link">Citas</a>
+                </li> -->
+                <li class="sidemenu__item" routerLinkActive="sidemenu__link--active">
+                    <a [routerLink]="['/welcome','tips']" class="sidemenu__link">Tips</a>
+                </li>
+                <!-- <li *ngIf="!nombre" class="sidemenu__item" routerLinkActive="sidemenu__link--active">
+                    <a [routerLink]="['/welcome','contact']" class="sidemenu__link">Iniciar sesión</a>
+                </li>
+                <li *ngIf="nombre" class="sidemenu__item" routerLinkActive="sidemenu__link--active">
+                    <a (click)="cerrarSesion()" class="sidemenu__link">Cerrar sesión</a>
+                </li> -->
+            </ul>
+        </nav>
+        
+        <nav class="menu-normal">
+            <ul>
+                <li *ngIf="nombre" routerLinkActive="active">
+                    <a [routerLink]="['/welcome', 'perfil']">{{nombre}}</a>
+                </li>
+                <li routerLinkActive="active">
+                    <a [routerLink]="['/welcome','landing']">Home</a>
+                </li>
+                <li routerLinkActive="active">
+                    <a [routerLink]="['/welcome','adopt']">Adopta</a>
+                </li>
+                <li routerLinkActive="active">
+                    <a [routerLink]="['/welcome','lost']">Reportes</a>
+                </li>
+                <li routerLinkActive="active">
+                    <a [routerLink]="['/welcome','news']">Noticias</a>
+                </li>
+                <!-- <li routerLinkActive="active">
+                    <a [routerLink]="['/welcome','dates']">Citas</a>
+                </li> -->
+                <li routerLinkActive="active">
+                    <a [routerLink]="['/welcome','tips']">Tips</a>
+                </li>
+                <!-- <li *ngIf="!nombre" routerLinkActive="active">
+                    <a [routerLink]="['/welcome','contact']">Iniciar Sesion</a>
+                </li>
+                <li *ngIf="nombre" routerLinkActive="active">
+                    <a (click)="cerrarSesion()">Cerrar sesión</a>
+                </li> -->
+            </ul>
+        </nav>
+    </div>
+</header>

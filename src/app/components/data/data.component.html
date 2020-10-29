@@ -1,0 +1,45 @@
+<section class="centered-layout container-data">
+  <form [formGroup]="formulario" class="form-data" (ngSubmit)="enviarDatos()">
+    <h3>Ingresa tus datos personales</h3>
+    <label for="nombre">Nombre completo</label>
+    <input class="form-data__input" id="nombre" type="text" formControlName="nombre">
+    <p class="form--mine__error" *ngIf="formulario.controls['nombre'].errors?.required">El nombre completo es necesario.</p>
+
+    <label for="telefono">Teléfono</label>
+    <input class="form-data__input" id="telefono" type="tel" formControlName="telefono">
+    <p class="form--mine__error" *ngIf="formulario.controls['telefono'].errors?.required">El teléfono es necesario.</p>
+
+    <label for="ciudad">Ciudad</label>
+    <input class="form-data__input" id="ciudad" type="text" formControlName="ciudad">
+    <p class="form--mine__error" *ngIf="formulario.controls['ciudad'].errors?.required">La ciudad es necesaria.</p>
+
+    <label for="fecha">Fecha</label>
+    <input class="form-data__input" id="fecha" type="date" formControlName="fecha">
+    <p class="form--mine__error" *ngIf="formulario.controls['fecha'].errors?.required">La fecha es necesaria.</p>
+
+    <label for="estado">Estado civil</label>
+    <input class="form-data__input" id="estado" type="text" formControlName="estado">
+    <p class="form--mine__error" *ngIf="formulario.controls['estado'].errors?.required">El estado civil es necesario.</p>
+
+    <label for="direccion">Dirección</label>
+    <input class="form-data__input" id="direccion" type="text" formControlName="direccion">
+    <p class="form--mine__error" *ngIf="formulario.controls['direccion'].errors?.required">La dirección es necesaria.</p>
+
+    <label for="correo">Correo electrónico</label>
+    <input class="form-data__input" id="correo" type="email" formControlName="correo">
+    <p class="form--mine__error" *ngIf="formulario.controls['correo'].errors?.required">El correo electrónico es necesario.</p>
+    <p class="form--mine__error" *ngIf="formulario.controls['correo'].errors?.email">El correo es inválido.</p>
+
+    <label for="celular">Celular</label>
+    <input class="form-data__input" id="celular" type="tel" formControlName="celular">
+    <p class="form--mine__error" *ngIf="formulario.controls['celular'].errors?.required">El número de celular es necesario.</p>
+
+    <label for="telefonoDos">Teléfono 2</label>
+    <input class="form-data__input" id="telefonoDos" type="text" formControlName="telefonoDos">
+
+    <label for="referencia">Referencia</label>
+    <textarea class="form-data__input" id="referencia" cols="30" rows="10" formControlName="referencia"></textarea>
+
+    <button type="submit" class="form-data__submit">Guardar datos</button>
+  </form>
+</section>

@@ -1,0 +1,13 @@
+<section class="pagina-perfil centered-layout">
+  <main class="pagina__contenido">
+    <nav class="perfil__nav">
+      <ul class="perfil__list">
+        <li routerLinkActive="perfil__item--active" class="perfil__item"><a [routerLink]="['/welcome','perfil','cuenta']">Cuenta</a></li>
+        <li routerLinkActive="perfil__item--active" class="perfil__item"><a [routerLink]="['/welcome','perfil','adoptados']">Animales adoptados</a></li>
+        <li routerLinkActive="perfil__item--active" class="perfil__item"><a [routerLink]="['/welcome','perfil','interesados']">Interesados</a></li>
+        <!-- <li routerLinkActive="perfil__item--active" class="perfil__item"><a [routerLink]="['/welcome','perfil','agendadas']">Citas agendadas</a></li> -->
+      </ul>
+    </nav>
+    <router-outlet class="perfil__contenido"></router-outlet>
+  </main>
+</section>

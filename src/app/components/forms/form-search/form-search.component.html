@@ -1,0 +1,19 @@
+<form class="form-search" (ngSubmit)="enviarBusqueda()">
+    <div>
+        <label class="label" for="filterType">Elige un tipo de mascota</label>
+        <select #filterType class="filter">
+            <option value="">Tipo de mascota</option>    
+            <option value="Canino">Canino</option>
+            <option value="Felino">Felino</option>
+        </select>
+    </div>
+    <div>
+        <label class="label" for="filterGenre">Elige un género de mascota</label>
+        <select #filterGenre class="filter">
+            <option value="">Género</option>
+            <option value="Macho">Macho</option>
+            <option value="Hembra">Hembra</option>
+        </select>
+    </div>
+    <button class="button button--submit" type="submit">Aplicar filtros</button>
+</form>

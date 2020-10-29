@@ -1,0 +1,27 @@
+<section class="centered-layout adoptados">
+    <div *ngIf="!citasAgendadas" id="cssload-loader">
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+      </div>
+  <h3 *ngIf="citasAgendadas.length === 0">No tienes ninguna cita agendada.</h3>
+  <table class="tabla-citas" *ngIf="citasAgendadas.length > 0">
+    <thead class="tabla-citas__encabezado">
+      <tr>
+        <th>Nombre de la mascota</th>
+        <th>Fecha de la cita</th>
+      </tr>
+    </thead>
+    <tbody class="tabla-citas__contenido">
+      <tr class="tabla-citas__fila" *ngFor="let cita of citasAgendadas">
+        <td>{{cita.nombreMascota}}</td>
+        <td>{{cita.fecha}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

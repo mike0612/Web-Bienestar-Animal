@@ -1,0 +1,18 @@
+<section class="centered-layout modal-adopt">
+  <article class="modal-adopt__window">
+    <header class="modal-adopt__header">
+      <h3>Confirmación de adopción</h3>
+      <i (click)="sendCloseModal()" class="pointer">X</i>
+    </header>
+    <main class="modal-adopt__content">
+      <h4>¿Quieres adoptar a esta mascota ahora mismo?</h4>
+      <figure class="modal-adopt__img">
+        <img [src]="mascota.foto" alt="foto_mascota">
+      </figure>
+    </main>
+    <footer class="modal-adopt__footer">
+      <a [routerLink]="['/welcome','request',mascota.id]" class="button-adopt full">Sí</a>
+      <button class="button-adopt" (click)="sendCloseModal()">En otro momento.</button>
+    </footer>
+  </article>
+</section>

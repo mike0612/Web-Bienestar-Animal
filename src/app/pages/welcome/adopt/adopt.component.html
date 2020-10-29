@@ -1,0 +1,42 @@
+<app-modal-adopt *ngIf="showModal" [mascota]="mascotaElegida" (closeModal)="changeState($event)"></app-modal-adopt>
+<div class="centered-layout ">
+  <section class="banner-adopt" #jumbotronAdopt>
+    <div class="container banner-adopt__content">
+      <h3>{{jumbotron.slogan}}</h3>
+    </div>
+  </section>
+
+  <app-form-search (emitirBusqueda)="buscarMascotas($event)" class="form"></app-form-search>
+
+  <section *ngIf="mascotas" class="results-container">
+    <h2 class="results-title">Resultados de la búsqueda</h2>
+    <article class="results-list">
+      <app-card-adopt *ngFor="let mascota of mascotas" [mascota]="mascota" (adopt)="changeState($event)"></app-card-adopt>
+    </article>
+  </section>
+  
+  <section class="container centered-layout categories">
+      <article class="card-grid card">
+        <figure class="card__figure">
+          <img [src]="categoriaPerro.img" alt="categoria_de_mascota">
+        </figure>
+        <footer class="card__footer">
+          <h3>Adopta a un perro</h3>
+          <div class="card__link">
+            <a [routerLink]='["/welcome", "adopt-dogs"]'>Adopta</a>
+          </div>
+        </footer>
+      </article>
+      <article class="card-grid card">
+        <figure class="card__figure">
+          <img [src]="categoriaGato.img" alt="categoria_de_mascota">
+        </figure>
+        <footer class="card__footer">
+          <h3>Adopta a un gato</h3>
+          <div class="card__link">
+            <a [routerLink]='["/welcome", "adopt-cats"]'>Adopta</a>
+          </div>
+        </footer>
+      </article>
+  </section>
+</div>

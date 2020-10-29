@@ -1,0 +1,22 @@
+<section class="centered-layout">
+  <section class="banner-tips" #jumbotronTips>
+    <header class="banner-tips__content">
+      <h3>{{jumbotron.slogan}}</h3>
+    </header>
+  </section>
+  <section *ngIf="!tips" class="carga">
+      <div id="cssload-loader">
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+      </div>
+    </section>
+  <section *ngIf="tips">
+    <app-card-tip *ngFor="let tip of tips" [tip]="tip"></app-card-tip>
+  </section>
+</section>

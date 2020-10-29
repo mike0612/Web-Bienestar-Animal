@@ -1,0 +1,11 @@
+<div class="singlePost-grid singlePost-card">
+  <figure>
+    <img [src]="noticia.foto" alt="noticia" class="singlePost-image">
+  </figure>
+  <div class="singlePost-new">
+    <h2>{{noticia.titulo}}</h2>
+    <h4>{{noticia.subtitulo}}</h4>
+    <p>{{noticia.contenido}}</p>
+    <a class="regresar-noticias" [routerLink]="['/welcome','news']">Regresar</a>
+  </div>
+</div>

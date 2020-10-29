@@ -1,0 +1,16 @@
+
+<div class="formLogin-container">
+  <form class="form-login centered-layout">
+    <h2>Inicia Sesión</h2>
+    <div class="inputLogo centered-layout">
+      <img src="../../../../assets/img/envelope1.png" alt="">
+      <input #txtEmail class="form-login__input" placeholder="Email" type="email" required>
+    </div>
+    <div class="inputLogo centered-layout">
+        <img src="../../../../assets/img/lock.png" alt="">
+        <input #txtPassword class="form-login__input" placeholder="Password" type="password" required>
+    </div>
+    <button class="form-login__submit" type="submit" (click)="iniciarSesion()">Ingresar</button>
+    <button class="form-login__register pointer" type="submit" [routerLink]="['/welcome','register']">¿Aún no tienes cuenta? Registrate.</button>
+  </form>
+</div>

@@ -1,0 +1,25 @@
+<form class="form--mine form-isMine" action="" (ngSubmit)="enviarSolicitud()" [formGroup]="formMine">
+    <h2>Ingresa tus datos</h2>
+    <div class="inputWithIcon inputIconBg">
+        <input formControlName="name" type="text" placeholder="Nombre" class="formLost-text" required>
+        <!-- <img src="https://img.icons8.com/material/24/000000/gender-neutral-user.png" class="formLost-icon"> -->
+        <img src="../../../../assets/img/user.png" alt="">
+      </div>
+      <div class="inputWithIcon inputIconBg">
+        <input formControlName="email" type="email" placeholder="Correo Electrónico" required>
+        <!-- <img src="https://img.icons8.com/material/24/000000/filled-message.png" class="formLost-icon"> -->
+        <img src="../../../../assets/img/envelope.png" alt="">
+      </div>
+      <div class="inputWithIcon inputIconBg">
+        <input formControlName="phone" type="tel" placeholder="Teléfono" required>
+        <!-- <img src="https://img.icons8.com/material/24/000000/phone.png" class="formLost-icon"> -->
+        <img src="../../../../assets/img/telefono.png" alt="">
+      </div>
+      <div class="inputWithIcon inputIconBg">
+        <input formControlName="comment" type="text" placeholder="Comentario" required>
+        <!-- <img src="https://img.icons8.com/material/24/000000/comments.png" class="formLost-icon"> -->
+        <img src="../../../../assets/img/comments.png" alt="">
+      </div>
+  <button class="button-mine" type="submit">Enviar datos</button>
+  <button class="button-mine--cancel" (click)="emitCloseModal()" type="button">Cancelar</button>
+</form>

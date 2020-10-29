@@ -1,0 +1,19 @@
+<article class="card--lost card--lost-grid">
+  <header class="card--lost__header">
+    <h3>{{perdido.tipo}}</h3>
+  </header>
+  <figure class="card--lost__figure">
+      <img [src]="perdido.foto" alt="imagen_de_mascota">
+  </figure>
+  <div class="card--lost__content">
+    <p>Ingresado: {{perdido.ingreso}}</p>
+    <p>Color: {{perdido.color}}</p>
+    <p>Raza: {{perdido.raza}}</p>
+    <p>Sexo: {{perdido.sexo}}</p>
+    <p>Características: {{perdido.caracteristicas}}</p>
+  </div>
+  <footer class="card--lost__footer">
+    <p *ngIf="!login">Para reclamar esta mascota, inicie sesión.</p>
+    <p *ngIf="login" (click)="showModal()">¡Es mío!</p>
+  </footer>
+</article>
